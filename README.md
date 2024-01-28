@@ -8,7 +8,7 @@ This repository hosts the code and infrastructure setup for a simple API endpoin
 - **Dockerfile**: Used for creating a Docker image of the application.
 - **Terraform Configuration Files**: These files are used to provision the necessary AWS resources.
 - **Deployment Script**: Automates the deployment process and provides the container service IP Address.
-- **Requirements**: The python application libraries installed in the application
+- **Requirements**: The Python application libraries installed in the application
 
 ## API Details
 
@@ -49,8 +49,10 @@ cd ./epoch-time-api/
 - Change deploy script permissions for execution
 ```bash
 chmod +x ./deploy.sh
+```
 
-- Deploy New applicaiton VPC and recieve new IP address for curl command
+- Deploy New application VPC and retrieve new IP address for curl command
+```bash
 ./deploy.sh
 ```
 ### Usage
