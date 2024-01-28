@@ -72,6 +72,21 @@ The deployment script will provide you with the proper command and IP Address to
 ```
 Where <EPOCH_TIME> is an integer representing the current epoch time in seconds.
 
+### Error Handling
+You might encounter the following error when trying to connect to the application:
+
+```bash
+curl: (7) Failed to connect to <PUBLIC_IP_ADDRESS> port 80: Connection refused
+```
+
+This error typically occurs when the application is not ready to accept connections. The solution is simple: wait a few seconds and try again. The application or AWS Fargate configurations might be in the process of starting up still.
+
+- Here’s the command to retry the connection:
+
+```bash
+curl http://<YOUR_PUBLIC_IP_ADDRESS>:80
+```
+
 Please note that the public IP address of your application is output by the deployment script. If you lose this IP address, you can rerun the deployment script to retrieve it.
 
 > **WARNING**: This application uses a development server. Do not use it in a production deployment. Use a production WSGI server instead.
