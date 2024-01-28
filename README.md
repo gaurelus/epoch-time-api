@@ -40,8 +40,18 @@ To access cloud resources authenticate with the following command in your termin
 aws configure
 ```
 ### Run the deploy.sh script
+
+- navigate to source directory
+```bash 
+cd ./epoch-time-api/ 
+```
+
+- Change deploy script permissions for execution
 ```bash
-chmod +x deploy.sh && deploy.sh
+chmod +x ./deploy.sh
+
+- Deploy New applicaiton VPC and recieve new IP address for curl command
+./deploy.sh
 ```
 ### Usage
 Once the application is deployed, you can interact with it using HTTP GET requests. The application responds to requests at the root endpoint (/) and returns the current epoch time in a JSON payload.

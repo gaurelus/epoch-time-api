@@ -12,6 +12,9 @@ terraform apply -auto-approve
 # Extract the cluster name from the Terraform output
 cluster_name=$(terraform output -raw cluster_name)
 
+# Wait for a few seconds to ensure that the task and network interface have been created
+sleep 20
+
 # List the tasks in the cluster and extract the task ARN
 task_arn=$(aws ecs list-tasks --cluster "$cluster_name" --query 'taskArns[0]' --output text)
 
