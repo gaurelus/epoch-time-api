@@ -76,7 +76,7 @@ Where <EPOCH_TIME> is an integer representing the current epoch time in seconds.
 You might encounter the following error when trying to connect to the application:
 
 ```bash
-curl: (7) Failed to connect to <PUBLIC_IP_ADDRESS> port 80: Connection refused
+curl: (7) Failed to connect to <YOUR_PUBLIC_IP_ADDRESS> port 80: Connection refused
 ```
 
 This error typically occurs when the application is not ready to accept connections. The solution is simple: wait a few seconds and try again. The application or AWS Fargate configurations might be in the process of starting up still.
