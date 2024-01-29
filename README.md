@@ -86,8 +86,28 @@ This error typically occurs when the application is not ready to accept connecti
 ```bash
 curl http://<YOUR_PUBLIC_IP_ADDRESS>:80
 ```
-
 Please note that the public IP address of your application is output by the deployment script. If you lose this IP address, you can rerun the deployment script to retrieve it.
+
+### Destroying the Terraform Infrastructure
+Once you’re done with the application and want to clean up the resources, you can destroy the Terraform infrastructure that was created. Here are the steps to do so:
+
+- Navigate to the terraform directory:
+```bash
+cd ./terraform
+```
+
+- Run the Terraform destroy command:
+```bash
+terraform destroy
+```
+
+- Confirm the destruction of the resources when prompted by typing yes.
+
+> **WARNING**: Please note that this will destroy all the resources created by Terraform, including the VPC, container service, and any other associated resources. This action is irreversible, so make sure you no longer need these resources before running the destroy command.
+
+Also, remember to clear your AWS CLI credentials from your machine if you’re not planning to use them again. You can do this by running aws configure and following the prompts to remove your credentials.
+
+That’s it! You’ve successfully cleaned up the resources created by this project. If you have any issues, feel free to raise an issue on this GitHub repository.
 
 > **WARNING**: This application uses a development server. Do not use it in a production deployment. Use a production WSGI server instead.
 
